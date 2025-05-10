@@ -23,7 +23,7 @@ const Projects = () => {
     {
       title: 'UniVibe - Society Management Web App',
       description: 'A MERN stack web application allowing university students to explore, enroll in, and manage society memberships with role-based access control and secure JWT-based authentication.',
-      image: '/univibe.png',
+      image: '/Univibe.png',
       technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT'],
       github: 'https://github.com/adeelHassan123/UniVibe-1.git',
       demo: ''
@@ -31,7 +31,7 @@ const Projects = () => {
     {
       title: 'Islamic Mobile App (Java)',
       description: 'An Islamic Android app developed in Java featuring Qibla direction, prayer times with alarms, Quranic verses, and an Islamic calendar.',
-      image: '/islamicapp.png',
+      image: '/IslamicApp.png',
       technologies: ['Java', 'Android Studio'],
       github: 'https://github.com/adeelHassan123/islamic-app',
       demo: ''

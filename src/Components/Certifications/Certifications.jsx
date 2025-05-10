@@ -23,7 +23,7 @@ const Certifications = () => {
         issuer: 'Coursera',
         date: '2022',
         description: 'Focused on modular design, functions, and control structures using C programming.',
-        image: '/Structured.jpeg'
+        image: '/structured.jpeg'
       },
       {
         title: 'Programming Fundamentals',
