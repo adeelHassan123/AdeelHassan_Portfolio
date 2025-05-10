@@ -51,7 +51,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="profile-picture">
-            <img src="/src/assets/Profile_Pic.jpg" alt="Adeel Hassan" />
+            <img src="/public/Profile_Pic.jpg" alt="Adeel Hassan" />
           </div>
         </motion.div>
 

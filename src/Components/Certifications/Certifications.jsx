@@ -16,28 +16,28 @@ const Certifications = () => {
         issuer: 'Coursera',
         date: '2023',
         description: 'Learned Java fundamentals, OOP, and data structures.',
-        image: '/src/assets/java.png'
+        image: '/public/java.png'
       },
       {
         title: 'Structured Programming',
         issuer: 'Coursera',
         date: '2022',
         description: 'Focused on modular design, functions, and control structures using C programming.',
-        image: '/src/assets/Structured.jpeg'
+        image: '/public/Structured.jpeg'
       },
       {
         title: 'Programming Fundamentals',
         issuer: 'Coursera ',
         date: '2022',
         description: 'Built foundational logic in C, including memory management, pointers, and structured programming.',
-        image: '/src/assets/C_prof.jpeg'
+        image: '/public/C_prof.jpeg'
       },
       {
         title: 'Introduction to C',
         issuer: 'Sololearn',
         date: '2022',
         description: 'Learned the basics of C programming language.',
-        image: '/src/assets/IntroC.jpg'
+        image: '/public/IntroC.jpg'
       },
       
       {
@@ -45,14 +45,14 @@ const Certifications = () => {
         issuer: 'HackerRank',
         date: '2023',
         description: 'Built responsive frontends with HTML/CSS.',
-        image: '/src/assets/CSS.png'
+        image: '/public/CSS.png'
       },
       {
         title: 'Advanced SQL',
         issuer: 'HackerRank',
         date: '2024',
         description: 'Mastered complex queries, joins, subqueries, indexing, and performance tuning.',
-        image: '/src/assets/SQL.png'
+        image: '/public/SQL.png'
       }
 ];
 
