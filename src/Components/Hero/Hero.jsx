@@ -29,7 +29,7 @@ const Hero = () => {
           className="hero-subtitle"
         >
         
-          Deep Learning | Machine Learning | MERN Stack Developer
+          Deep Learning & Machine Learning Enthusiast | MERN Stack Developer
 
         </motion.h2>
         
