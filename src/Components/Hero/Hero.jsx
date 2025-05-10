@@ -49,31 +49,7 @@ const Hero = () => {
           Computer Science Student at NUST Islamabad
         </motion.p>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="hero-buttons"
-        >
-          <motion.a 
-            href="#contact" 
-            className="btn btn-primary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Send size={16} />
-            Contact Me
-          </motion.a>
-          <motion.a 
-            href="#" 
-            className="btn btn-secondary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FileDown size={16} />
-            Download Resume
-          </motion.a>
-        </motion.div>
+        
       </div>
       <div className="scroll-indicator">
         <div className="mouse">
