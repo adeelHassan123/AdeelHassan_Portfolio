@@ -15,7 +15,7 @@ const Projects = () => {
     {
       title: 'Deep Learning Framework for MNIST (C++)',
       description: 'Developed a custom deep learning framework in C++ for the MNIST dataset, achieving 84.1% accuracy. Includes tensor manipulation, dynamic architecture with linked lists and stacks, backpropagation with cross-entropy loss, and OpenCV visualization.',
-      image: '/public/Predict1.png',
+      image: '/Predict1.png',
       technologies: ['C++', 'OpenCV', 'MNIST'],
       github: 'https://github.com/adeelHassan123/Tencor.git',
       demo: ''
@@ -23,7 +23,7 @@ const Projects = () => {
     {
       title: 'UniVibe - Society Management Web App',
       description: 'A MERN stack web application allowing university students to explore, enroll in, and manage society memberships with role-based access control and secure JWT-based authentication.',
-      image: '/public/univibe.png',
+      image: '/univibe.png',
       technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT'],
       github: 'https://github.com/adeelHassan123/UniVibe-1.git',
       demo: ''
@@ -31,7 +31,7 @@ const Projects = () => {
     {
       title: 'Islamic Mobile App (Java)',
       description: 'An Islamic Android app developed in Java featuring Qibla direction, prayer times with alarms, Quranic verses, and an Islamic calendar.',
-      image: '/public/islamicapp.png',
+      image: '/islamicapp.png',
       technologies: ['Java', 'Android Studio'],
       github: 'https://github.com/adeelHassan123/islamic-app',
       demo: ''
