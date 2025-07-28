@@ -2,7 +2,7 @@ import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Send } from 'lucide-react';
 import './Projects.css';
 
 const Projects = () => {
@@ -27,6 +27,14 @@ const Projects = () => {
       technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT'],
       github: 'https://github.com/adeelHassan123/UniVibe-1.git',
       demo: ''
+    },
+    {
+      title: 'AnalyzeTheChat',
+      description: 'A Streamlit-based web application for analyzing WhatsApp chat exports, offering insights into message patterns, top participants, and group dynamics with visualizations like word clouds and activity timelines.',
+      image: '/AnalyzeTheChat.jpg',
+      technologies: ['Python', 'Streamlit', 'Pandas', 'Matplotlib', 'Seaborn'],
+      github: 'https://github.com/adeelHassan123/AnalyzeTheChat.git',
+      demo: 'https://analyzethechat.up.railway.app/'
     },
     {
       title: 'Islamic Mobile App (Java)',
@@ -81,10 +89,10 @@ const Projects = () => {
             key={index} 
             className="project-card"
             variants={itemVariants}
-            whileHover={{ 
+            whileHover={project.demo || project.github ? { 
               y: -10,
               transition: { duration: 0.3 }
-            }}
+            } : {}}
           >
             <div className="project-image">
               <img src={project.image} alt={project.title} />
@@ -107,17 +115,6 @@ const Projects = () => {
                   <Github size={20} />
                   <span>View Code</span>
                 </a>
-                {project.demo && (
-                  <a 
-                    href={project.demo} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="project-link demo-link"
-                  >
-                    <ExternalLink size={20} />
-                    <span>Live Demo</span>
-                  </a>
-                )}
               </div>
             </div>
           </motion.div>

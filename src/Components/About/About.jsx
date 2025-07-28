@@ -45,41 +45,19 @@ const About = () => {
 
       <div className="about-content">
         <motion.div
-          className="about-image"
-          initial={{ opacity: 0, x: -50 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="profile-picture">
-            <img src="/Profile_Pic.jpg" alt="Adeel Hassan" />
-          </div>
-        </motion.div>
-
-        <motion.div
           className="about-text"
           initial={{ opacity: 0, x: 50 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          
           <p>
-            Hi, I'm Adeel Hassan — a Computer Science student at NUST Islamabad,
-            deeply interested in Deep Learning and Machine Learning. I’m driven
-            by the idea of turning complex concepts into real-world applications
-            that solve meaningful problems.
+            I am Adeel Hassan, a Computer Science student at NUST Islamabad with a specialization in Artificial Intelligence and Machine Learning. My expertise lies in developing innovative AI-driven solutions and scalable web applications, aligning with industry standards for performance and reliability.
           </p>
           <p>
-            I also work as a MERN Stack Developer, building scalable, efficient
-            web apps with clean and responsive designs. I enjoy working across
-            the full stack, from crafting intuitive frontends to managing
-            backend logic and databases. 
+            As a proficient MERN Stack Developer, I design and implement robust full-stack solutions, ensuring seamless integration of frontend interfaces and backend systems. My work emphasizes clean architecture, optimized databases, and responsive design to meet the demands of modern tech enterprises.
           </p>
           <p>
-          With a solid grip on algorithms, data
-            structures, and ML fundamentals, I love diving into challenging
-            problems and finding smart, practical solutions. Outside of coding,
-            you’ll usually find me reading research papers, contributing to
-            open-source projects, or just experimenting with new ideas.
+            With a strong foundation in algorithms, data structures, and machine learning frameworks, I excel at solving complex technical challenges. I actively contribute to open-source projects and stay updated with cutting-edge research to deliver high-impact, future-ready solutions.
           </p>
 
           <motion.div
@@ -88,15 +66,13 @@ const About = () => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
           >
-            
-
             <motion.div className="highlight-item" variants={itemVariants}>
               <div className="highlight-icon">
                 <Brain size={24} />
               </div>
               <div className="highlight-text">
-                <h4>Deep Learning & Machine Learning</h4>
-                <p>Creating intelligent AI systems and training models</p>
+                <h4>AI & Machine Learning</h4>
+                <p>Designing and deploying advanced AI models</p>
               </div>
             </motion.div>
 
@@ -106,7 +82,7 @@ const About = () => {
               </div>
               <div className="highlight-text">
                 <h4>Full Stack Development</h4>
-                <p>Building robust and scalable Websites and Web-applications</p>
+                <p>End-to-end web application development</p>
               </div>
             </motion.div>
 
@@ -115,8 +91,8 @@ const About = () => {
                 <Database size={24} />
               </div>
               <div className="highlight-text">
-                <h4>Data Base Management</h4>
-                <p>Managing and storing data efficiently</p>
+                <h4>Database Optimization</h4>
+                <p>Efficient data management and querying</p>
               </div>
             </motion.div>
 
@@ -126,7 +102,7 @@ const About = () => {
               </div>
               <div className="highlight-text">
                 <h4>Problem Solving</h4>
-                <p>Exploring and solving cutting-edge CS technologies</p>
+                <p>Addressing complex technical challenges</p>
               </div>
             </motion.div>
           </motion.div>
@@ -136,4 +112,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

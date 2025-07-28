@@ -61,18 +61,14 @@ The website is hosted on Vercel and can be accessed globally at:
 ```
 https://adeel-hassan-portfolio.vercel.app/
 ```
-
 ## 📫 Contact
+
 If you'd like to connect or collaborate, feel free to reach out via:
 
-## LinkedIn: 
-```
-https://www.linkedin.com/in/adeelhassancs/
-```
+- [Contact Form](https://adeel-hassan-portfolio.vercel.app/#contact)
+- [LinkedIn](https://www.linkedin.com/in/adeelhassancs/)
+- [GitHub Repository](https://github.com/adeelHassan123/AdeelHassan_Portfolio)
 
-## GitHub: 
-```
-https://github.com/adeelHassan123/AdeelHassan_Portfolio
-```
 ## 📜 License
-This project is open-source and available under the MIT License.
+
+This project is open-source and available under the [MIT License](LICENSE).

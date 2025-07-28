@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -6,75 +7,21 @@ import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  
-  const [formStatus, setFormStatus] = useState({
-    submitted: false,
-    success: false,
-    message: ''
-  });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Simulate form submission
-    setFormStatus({
-      submitted: true,
-      success: true,
-      message: 'Thank you for your message! I will get back to you soon.'
-    });
-    
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-    
-    // Reset form status after 5 seconds
-    setTimeout(() => {
-      setFormStatus({
-        submitted: false,
-        success: false,
-        message: ''
-      });
-    }, 5000);
-  };
+  const [state, handleSubmit] = useForm("xyzpjegq"); // Replace with your actual Formspree ID
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
-      transition: { 
-        staggerChildren: 0.2
-      }
+      transition: { staggerChildren: 0.2 }
     }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6 }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
   return (
@@ -111,9 +58,7 @@ const Contact = () => {
             animate={inView ? "visible" : "hidden"}
           >
             <motion.div className="contact-method" variants={itemVariants}>
-              <div className="contact-icon">
-                <Mail size={24} />
-              </div>
+              <div className="contact-icon"><Mail size={24} /></div>
               <div className="contact-details">
                 <h4>Email</h4>
                 <a href="mailto:adeel.hassan2k20@gmail.com">adeel.hassan2k20@gmail.com</a>
@@ -121,9 +66,7 @@ const Contact = () => {
             </motion.div>
 
             <motion.div className="contact-method" variants={itemVariants}>
-              <div className="contact-icon">
-                <Phone size={24} />
-              </div>
+              <div className="contact-icon"><Phone size={24} /></div>
               <div className="contact-details">
                 <h4>Phone</h4>
                 <a href="tel:+923125479934">+92 312 5479934</a>
@@ -131,9 +74,7 @@ const Contact = () => {
             </motion.div>
 
             <motion.div className="contact-method" variants={itemVariants}>
-              <div className="contact-icon">
-                <Linkedin size={24} />
-              </div>
+              <div className="contact-icon"><Linkedin size={24} /></div>
               <div className="contact-details">
                 <h4>LinkedIn</h4>
                 <a href="https://www.linkedin.com/in/adeelhassancs/" target="_blank" rel="noopener noreferrer">
@@ -143,9 +84,7 @@ const Contact = () => {
             </motion.div>
 
             <motion.div className="contact-method" variants={itemVariants}>
-              <div className="contact-icon">
-                <Github size={24} />
-              </div>
+              <div className="contact-icon"><Github size={24} /></div>
               <div className="contact-details">
                 <h4>GitHub</h4>
                 <a href="https://github.com/adeelHassan123/" target="_blank" rel="noopener noreferrer">
@@ -162,56 +101,36 @@ const Contact = () => {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                value={formData.name}
-                onChange={handleChange}
-                required 
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                value={formData.email}
-                onChange={handleChange}
-                required 
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-            
-            {formStatus.submitted && (
-              <div className={`form-feedback ${formStatus.success ? 'success' : 'error'}`}>
-                {formStatus.message}
+          {state.succeeded ? (
+            <p className="form-feedback success">Thank you for your message! I’ll get back to you soon.</p>
+          ) : (
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input id="name" type="text" name="name" required />
               </div>
-            )}
 
-            <button type="submit" className="submit-button">
-              <Send size={18} />
-              Send Message
-            </button>
-          </form>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input id="email" type="email" name="email" required />
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea id="message" name="message" rows="5" required />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
+              </div>
+
+              <button type="submit" className="submit-button" disabled={state.submitting}>
+                <Send size={18} /> Send Message
+              </button>
+            </form>
+          )}
         </motion.div>
       </div>
     </section>
   );
 };
 
-export default Contact; 
+export default Contact;
